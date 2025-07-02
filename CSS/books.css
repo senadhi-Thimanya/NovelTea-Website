@@ -1,0 +1,124 @@
+/* General styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Book detail layout */
+.book-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.book-cover {
+    flex: 0 0 300px;
+}
+
+.book-cover img {
+    max-width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-title {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+}
+
+.book-author {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.book-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e63946;
+    margin: 20px 0;
+}
+
+.add-to-cart {
+    background-color: #7ac4c6;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #5fa9a5;
+}
+
+/* Reviews section */
+.reviews-section {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.rating-summary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stars {
+    margin-right: 10px;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.star.full-star {
+    color: gold;
+    text-shadow: 0 0 1px #ccc;
+}
+
+.star.half-star {
+    color: gold;
+    text-shadow: 0 0 1px #ccc;
+    position: relative;
+}
+
+.star.empty-star {
+    color: #ccc;
+}
+
+.review {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.review-stars {
+    font-size: 1.2em;
+}
+
+.review-meta {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.review-content {
+    line-height: 1.6;
+}

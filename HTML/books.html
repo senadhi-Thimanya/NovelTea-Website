@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/books.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+</head>
+
+<body>
+    <!-- Header with logo and cart -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <div>
+                        <a href="../HTML/landing.html"><img id="img-logo" src="../images/logo2.svg" alt="Logo in the header"></a>
+                    </div>
+                </li>
+                <li class="nav-items"><a href="../HTML/landing.html">Home</a></li>
+                <li class="nav-items"><a href="../HTML/categories.html">Categories</a></li>
+                <li class="nav-items"><a href="news.html">News</a></li>
+                <li class="nav-items"><a href="#footer" onclick="document.querySelector('.footer').scrollIntoView({behavior: 'smooth'})">Contact Us</a></li>
+                <li style="margin-left: auto;">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search books..." aria-label="search books">
+                        <button>🔍</button>
+                    </div>
+                </li>
+                <li id="login-btn-nav" class="nav-items"><a href="../HTML/signup.html">Login</a></li>
+                <li>
+                    <div class="cart-container">
+                        <button id="cart-button">🛒</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../HTML/landing.html">Home</a></li>
+                <li><a href="../HTML/categories.html">Categories</a></li>
+                <li><a href="../HTML/categories.html" id="category-crumb">Loading...</a></li>
+                <li class="active" id="book-crumb">Loading...</li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <!-- Book details container -->
+        <div class="main-container">
+            <div id="book-container" class="book-container">
+                <div class="book-cover">
+                    <img id="book-cover" src="../images/atomicHabits.jpg" alt="Book cover">
+                </div>
+
+                <div class="book-info">
+                    <h1 id="book-title" class="book-title">Loading book details...</h1>
+                    <div id="book-author" class="book-author">by Author Name</div>
+
+                    <div class="book-description">
+                        <p id="book-description">Loading description...</p>
+                    </div>
+
+                    <div id="book-price" class="book-price">$0.00</div>
+
+                    <button id="add-to-cart" class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="reviews-section">
+                <h2>Reviews</h2>
+
+                <!-- Average Rating Display -->
+                <div id="average-rating">
+                    <!-- This will be populated by JavaScript -->
+                    <p>Loading ratings...</p>
+                </div>
+
+                <!-- Individual Reviews -->
+                <div id="reviews-container">
+                    <!-- This will be populated by JavaScript -->
+                    <p>Loading reviews...</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div id="logo-footer">
+                <a href="../HTML/landing.html"><img id="img-logo-footer" src="../images/logo2.svg"
+                        alt="Logo in the footer"></a>
+
+            </div>
+            <!-- Left Section: Newsletter Subscription -->
+            <div class="footer-newsletter">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to get the latest book news and updates!</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required aria-label="Email Address">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <br>
+                <p>Contact us: <a href="mailto:recipient@example.com" style="color: #2C3E50;">Send Email</a></p>
+            </div>
+
+            <!-- Right Section: Social Media Links -->
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <div class="icon-text-div">
+                        <div><a href="https://instagram.com" class="icon" aria-label="instagram"><i
+                                    class="fa-brands fa-instagram"></i></a></div>
+                        <div>Instagram</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <div><a href="https://twitter.com" class="icon" aria-label="twitter"><i
+                                    class="fa-brands fa-x-twitter"></i></a><br></div>
+                        <div>X</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <a href="https://facebook.com" class="icon" aria-label="facebook"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <div>Facebook</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <a href="https://tiktok.com" class="icon" aria-label="tiktok"><i
+                                class="fa-brands fa-tiktok"></i></a><br>
+                        <div>Tiktok</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © NovelTea, 2025. NovelTea Booksellers Limited. Registered in Sri Lanka.
+            Company number 12345678. Registered office address: No.123,x road, Colombo.
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="../JS/cart.js"></script>
+    <script src="../JS/filtering.js"></script>
+    <script src="../JS/books.js"></script>
+    <script src="../JS/login.js"></script>
+    <script>
+
+        // ----- SEARCH FUNCTIONALITY -----
+        const searchInput = document.querySelector('.search-container input');
+        const searchButton = document.querySelector('.search-container button');
+
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            // Save search term to localStorage
+            localStorage.setItem('searchTerm', searchTerm);
+
+            // Show notification
+            alert("Please use the search functionality in the categories page");
+
+            // Redirect to categories page
+            window.location.href = 'categories.html';
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+
+        <div class="cart-items">
+            <div class="cart-item">
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal (1 item)</span>
+                <span>$32.99</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Shipping</span>
+                <span>$5.99</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Tax</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-total">
+                <span>Order Total</span>
+                <span>$38.98</span>
+            </div>
+        </div>
+
+        <div class="cart-actions">
+            <button class="continue-checkout" onclick="window.location.href='../HTML/checkout.html'">Continue to
+                Checkout</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

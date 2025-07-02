@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book id="haunting-adeline">
+    <title>Haunting Adeline</title>
+    <author>H.D. Carlton</author>
+    <cover>../images/hAdeline.jpg</cover>
+    <price>16.99</price>
+    <description>A captivating dark romance that blends psychological thriller elements with intense chemistry, Haunting Adeline follows a woman who discovers she has a stalker with dangerous obsessions.</description>
+  </book>
+  
+  <book id="onyx-storm">
+    <title>Onyx Storm</title>
+    <author>Lara Hale</author>
+    <cover>../images/onyxStorm.jpeg</cover>
+    <price>14.95</price>
+    <description>An epic fantasy with an intriguing magic system and well-developed world-building, Onyx Storm follows a reluctant hero who must harness the power of ancient storms to save their realm.</description>
+  </book>
+  
+  <book id="harry-potter-philosophers-stone">
+    <title>Harry Potter and the Philosopher's Stone</title>
+    <author>J.K. Rowling</author>
+    <cover>../images/hp.jpg</cover>
+    <price>12.99</price>
+    <description>The book that started it all, Harry Potter and the Philosopher's Stone introduces us to the Boy Who Lived and his first year at Hogwarts School of Witchcraft and Wizardry, where he discovers friendship, courage, and his destiny.</description>
+  </book>
+  
+  <book id="wild-robot">
+    <title>The Wild Robot</title>
+    <author>Peter Brown</author>
+    <cover>../images/theWildRobot.jpg</cover>
+    <price>13.99</price>
+    <description>After being shipwrecked on a remote island, a robot named Roz must adapt to her surroundings and learn to communicate with the island's animals, eventually becoming part of their community in unexpected ways.</description>
+  </book>
+  
+  <book id="whisperwicks">
+    <title>The Whisperwicks</title>
+    <author>Elliott Morgan</author>
+    <cover>../images/theWhis.jpg</cover>
+    <price>15.50</price>
+    <description>In this atmospheric supernatural thriller, a family moves into a historic home only to discover that the whispers in the walls are more than just settling foundations - they're the echoes of a dark history that refuses to stay buried.</description>
+  </book>
+  
+  <book id="dune">
+    <title>Dune</title>
+    <author>Frank Herbert</author>
+    <cover>../images/dune.jpg</cover>
+    <price>18.99</price>
+    <description>Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the "spice" melange, a drug capable of extending life and enhancing consciousness.</description>
+  </book>
+  
+  <book id="psychology-of-money">
+    <title>The Psychology of Money</title>
+    <author>Morgan Housel</author>
+    <cover>../images/thePsychoOfMoney.jpg</cover>
+    <price>19.99</price>
+    <description>Through entertaining stories and insights, Morgan Housel explores how people think about money and how their personal experiences with money shape their behavior more than financial education or skills.</description>
+  </book>
+  
+  <book id="atomic-habits">
+    <title>Atomic Habits</title>
+    <author>James Clear</author>
+    <cover>../images/atomicHabits.jpg</cover>
+    <price>17.95</price>
+    <description>A practical guide to breaking bad habits and building good ones, Atomic Habits offers a proven framework for improving every day by focusing on tiny changes that lead to remarkable results over time.</description>
+  </book>
+  
+  <book id="naval-ravikant">
+    <title>The Almanack of Naval Ravikant</title>
+    <author>Eric Jorgenson</author>
+    <cover>../images/navalRavikant.jpg</cover>
+    <price>16.50</price>
+    <description>A collection of wisdom and experience from the entrepreneur and investor Naval Ravikant, offering guidance on building wealth, finding happiness, and developing good judgment through long-term thinking.</description>
+  </book>
+  
+  <book id="learning-to-see-creatively">
+    <title>Learning to See Creatively</title>
+    <author>Bryan Peterson</author>
+    <cover>../images/learningtoseecreatively.jpg</cover>
+    <price>24.99</price>
+    <description>This essential guide for photographers helps readers unleash their creative potential by teaching them to see and capture the world differently through composition, color, and light.</description>
+  </book>
+  
+  <book id="harry-potter-chamber">
+    <title>Harry Potter and the Chamber of Secrets</title>
+    <author>J.K. Rowling</author>
+    <cover>../images/hp-2.jpg</cover>
+    <price>12.99</price>
+    <description>In Harry's second year at Hogwarts, a mysterious Chamber of Secrets has been opened, releasing a monster that petrifies the school's students. Harry, Ron, and Hermione must solve the mystery while confronting dark revelations about Hogwarts' past.</description>
+  </book>
+  
+  <book id="missing-marble">
+    <title>The Case of the Missing Marble</title>
+    <author>Rebecca Chen</author>
+    <cover>../images/missingmarquess.jpg</cover>
+    <price>13.50</price>
+    <description>In this charming cozy mystery, amateur sleuth Ellie Morris investigates the disappearance of a valuable marble sculpture from her small town's museum, uncovering secrets about her neighbors along the way.</description>
+  </book>
+  
+  <book id="dragon-tattoo">
+    <title>The Girl with the Dragon Tattoo</title>
+    <author>Stieg Larsson</author>
+    <cover>../images/dragonTattoo.jpg</cover>
+    <price>15.99</price>
+    <description>Journalist Mikael Blomkvist and enigmatic hacker Lisbeth Salander investigate a wealthy family's dark history while trying to solve the 40-year-old disappearance of a teenage girl, uncovering corruption and serial murder along the way.</description>
+  </book>
+  
+  <book id="gone-girl">
+    <title>Gone Girl</title>
+    <author>Gillian Flynn</author>
+    <cover>../images/gonegirl.jpg</cover>
+    <price>14.95</price>
+    <description>When Nick Dunne's wife Amy disappears on their fifth wedding anniversary, all evidence points to him as the prime suspect. Told from alternating perspectives, this psychological thriller unravels the complexities of a toxic marriage and challenges the notion of reliable narrators.</description>
+  </book>
+  
+  <book id="silent-patient">
+    <title>The Silent Patient</title>
+    <author>Alex Michaelides</author>
+    <cover>../images/silentpatient.jpg</cover>
+    <price>16.99</price>
+    <description>After shooting her husband five times, renowned painter Alicia Berenson never speaks another word. Criminal psychotherapist Theo Faber becomes obsessed with uncovering her motive, but his determination to get her to talk threatens to consume him as he unravels the mystery.</description>
+  </book>
+</books>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovelTea</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .carousel-container .arrow {
+            background-color: rgba(44, 62, 80, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+            position: absolute;
+        }
+
+        .carousel-container .arrow.left {
+            left: 0;
+        }
+
+        .carousel-container .arrow.right {
+            right: 0;
+        }
+
+        .carousel-container .arrow:hover {
+            background-color: rgba(44, 62, 80, 0.2);
+        }
+
+        .book-carousel {
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on iOS */
+            scroll-snap-type: x mandatory;
+            /* Snap to book cards */
+            scroll-padding: 0 20px;
+        }
+
+        .book-carousel .category-book-card {
+            scroll-snap-align: center;
+            flex: 0 0 auto;
+            width: 200px;
+            /* Fixed width for consistent layout */
+            margin-right: 20px;
+        }
+
+        /* Hide scrollbar but keep functionality */
+        .book-carousel::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <div>
+                        <a href="../HTML/landing.html"><img id="img-logo" src="../images/logo2.svg" alt="Logo in the header"></a>
+                    </div>
+                </li>
+                <li class="nav-items"><a href="../HTML/landing.html">Home</a></li>
+                <li class="nav-items"><a href="../HTML/categories.html">Categories</a></li>
+                <li class="nav-items"><a href="news.html">News</a></li>
+                <li class="nav-items"><a href="#footer" onclick="document.querySelector('.footer').scrollIntoView({behavior: 'smooth'})">Contact Us</a></li>
+                <li style="margin-left: auto;">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search books..." aria-label="search books">
+                        <button>🔍</button>
+                    </div>
+                </li>
+                <li id="login-btn-nav" class="nav-items"><a href="../HTML/signup.html">Login</a></li>
+                <li>
+                    <div class="cart-container">
+                        <button id="cart-button">🛒</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="carousel-wrapper">
+            <div class="banner-carousel">
+                <div class="carousel-slide">
+                    <img src="../images/bg1.svg" alt="Banner 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/bg2.svg" alt="Banner 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/bg3.svg" alt="Banner 3">
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button id="prev-btn" class="slide-btn">⬅</button>
+            <button id="next-btn" class="slide-btn">➡</button>
+
+            <!-- Indicators (Dots) -->
+            <div class="indicators"></div>
+        </div>
+
+        <div class="main-heading-container">
+            <img src="../images/bg4.png" alt="Background for the Welcome" class="heading-bg">
+            <h1 id="main-heading">Welcome to NovelTea!</h1>
+        </div>
+
+        <!-- Trending Books Section -->
+        <div class="book-section">
+            <div class="section-title">
+                <h2>Trending</h2>
+            </div>
+            <div class="carousel-container">
+                <button class="arrow left" onclick="scrollCarousel('trending', -200)">‹</button>
+                <div class="book-carousel" id="trending">
+                    <!-- Book 1 -->
+                    <div class="category-book-card" data-id="haunting-adeline" data-categories="Fiction,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/hAdeline.jpg" alt="Haunting Adeline">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Haunting Adeline</h3>
+                            <p class="category-book-author">H. D. Carlton</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$18.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 2 -->
+                    <div class="category-book-card" data-id="onyx-storm" data-categories="Fiction">
+                        <div class="category-book-image">
+                            <img src="../images/onyxStorm.jpeg" alt="Onyx Storm">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Onyx Storm</h3>
+                            <p class="category-book-author">Rebecca Yarros</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$22.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 3 -->
+                    <div class="category-book-card" data-id="harry-potter-philosophers-stone" data-categories="Fiction,Children's Books">
+                        <div class="category-book-image">
+                            <img src="../images/hp.jpg" alt="Harry Potter and the Philosopher's Stone">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Harry Potter and the Philosopher's Stone</h3>
+                            <p class="category-book-author">J. K. Rowling</p>
+                            <div class="category-book-rating">★★★★★</div>
+                            <div class="category-book-price">$15.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 4 -->
+                    <div class="category-book-card" data-id="wild-robot" data-categories="Fiction,Children's Books,Science Fiction">
+                        <div class="category-book-image">
+                            <img src="../images/theWildRobot.jpg" alt="The Wild Robot">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">The Wild Robot</h3>
+                            <p class="category-book-author">Peter Brown</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$14.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 5 -->
+                    <div class="category-book-card" data-id="whisperwicks" data-categories="Fiction,Children's Books">
+                        <div class="category-book-image">
+                            <img src="../images/theWhis.jpg" alt="The Whisperwicks">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">The Whisperwicks</h3>
+                            <p class="category-book-author">Jordan Lees</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$19.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 6 -->
+                    <div class="category-book-card" data-id="dune" data-categories="Fiction,Science Fiction">
+                        <div class="category-book-image">
+                            <img src="../images/dune.jpg" alt="Dune">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Dune</h3>
+                            <p class="category-book-author">Frank Herbert</p>
+                            <div class="category-book-rating">★★★★★</div>
+                            <div class="category-book-price">$45.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollCarousel('trending', 200)">›</button>
+            </div>
+        </div>
+
+        <!-- Fiction Books Section -->
+        <div class="book-section">
+            <div class="section-title">
+                <h2>Fiction</h2>
+            </div>
+            <div class="carousel-container">
+                <button class="arrow left" onclick="scrollCarousel('fiction', -200)">‹</button>
+                <div class="book-carousel" id="fiction">
+                    <!-- Book 11 -->
+                    <div class="category-book-card" data-id="harry-potter-chamber" data-categories="Fiction,Children's Books">
+                        <div class="category-book-image">
+                            <img src="../images/hp-2.jpg" alt="Harry Potter and the Chamber of Secrets">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Harry Potter and the Chamber of Secrets</h3>
+                            <p class="category-book-author">J. K. Rowling</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$16.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 12 -->
+                    <div class="category-book-card" data-id="missing-marble" data-categories="Fiction,Children's Books,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/missingmarquess.jpg" alt="The Case of the Missing Marble">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">The Case of the Missing Marble</h3>
+                            <p class="category-book-author">Jordan Lees</p>
+                            <div class="category-book-rating">★★★☆☆</div>
+                            <div class="category-book-price">$9.49</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 13 -->
+                    <div class="category-book-card" data-id="dragon-tattoo" data-categories="Fiction,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/dragonTattoo.jpg" alt="The Girl with the Dragon Tattoo">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">The Girl with the Dragon Tattoo</h3>
+                            <p class="category-book-author">Stieg Larsson</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$12.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 14 -->
+                    <div class="category-book-card" data-id="gone-girl" data-categories="Fiction,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/gonegirl.jpg" alt="Gone Girl">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Gone Girl</h3>
+                            <p class="category-book-author">Gillian Flynn</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$10.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 15 -->
+                    <div class="category-book-card" data-id="silent-patient" data-categories="Fiction,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/silentpatient.jpg" alt="The Silent Patient">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">The Silent Patient</h3>
+                            <p class="category-book-author">Alex Michaelides</p>
+                            <div class="category-book-rating">★★★★★</div>
+                            <div class="category-book-price">$14.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Book 1 -->
+                    <div class="category-book-card" data-id="haunting-adeline" data-categories="Fiction,Mystery">
+                        <div class="category-book-image">
+                            <img src="../images/hAdeline.jpg" alt="Haunting Adeline">
+                        </div>
+                        <div class="category-book-details">
+                            <h3 class="category-book-title">Haunting Adeline</h3>
+                            <p class="category-book-author">H. D. Carlton</p>
+                            <div class="category-book-rating">★★★★☆</div>
+                            <div class="category-book-price">$18.99</div>
+                            <button class="category-add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow right" onclick="scrollCarousel('fiction', 200)">›</button>
+            </div>
+        </div>
+        <div id="divider-categories"></div>
+        <div class="arrow-container" onclick="window.open('categories.html', '_self')"><button
+                id="down-arrow-btn">▾</button></div>
+
+        <div class="content-wrapper">
+            <section class="news-section">
+                <h2 class="news-h2"><a href="news.html">News</a></h2>
+                <div class="news-box">
+                    <a href="news-post.html" class="news-link">
+                        <h3>Big Announcement: New Books Coming Soon!</h3>
+                        <p>Discover the cream of current publishing with the best new titles from the worlds of fiction,
+                            non-fiction and children's books. From the biggest books by beloved authors to word-of-mouth
+                            releases from exciting new voices, these unmissable new titles are all hot off the press.
+                        </p>
+                    </a>
+                </div>
+            </section>
+            <section class="book-of-the-day">
+                <div class="book-info">
+                    <h2>Book of the Day</h2>
+                    <div class="book-box">
+                        <a href="book-details.html" class="book-description">
+                            <h3>stormbreaker (The Silver Edition)</h3>
+                            <p>The Silver Edition of the first book in the number one bestselling Alex Rider series
+                                includes an exclusive new short story, Nine Ways to Die.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="book-image">
+                    <img src="../images/cover.png" alt="The Enchanted Library Book Cover">
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div id="logo-footer">
+                <a href="../HTML/landing.html"><img id="img-logo-footer" src="../images/logo2.svg" alt="Logo in the footer"></a>
+
+            </div>
+            <!-- Left Section: Newsletter Subscription -->
+            <div class="footer-newsletter">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to get the latest book news and updates!</p>
+                <form>
+                    <input type="email" placeholder="Enter your email" required aria-label="Email Address">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <br>
+                <p>Contact us: <a href="mailto:recipient@example.com" style="color: #2C3E50;">Send Email</a></p>
+            </div>
+
+            <!-- Right Section: Social Media Links -->
+            <div class="footer-social">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <div class="icon-text-div">
+                        <div><a href="https://instagram.com" class="icon" aria-label="instagram"><i
+                                    class="fa-brands fa-instagram"></i></a></div>
+                        <div>Instagram</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <div><a href="https://twitter.com" class="icon" aria-label="twitter"><i
+                                    class="fa-brands fa-x-twitter"></i></a><br></div>
+                        <div>X</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <a href="https://facebook.com" class="icon" aria-label="facebook"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <div>Facebook</div>
+                    </div>
+                    <div class="icon-text-div">
+                        <a href="https://tiktok.com" class="icon" aria-label="tiktok"><i
+                                class="fa-brands fa-tiktok"></i></a><br>
+                        <div>Tiktok</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © NovelTea, 2025. NovelTea Booksellers Limited. Registered in Sri Lanka.
+            Company number 12345678. Registered office address: No.123,x road, Colombo.
+        </div>
+    </footer>
+    <script src="../JS/carousel.js"></script>
+    <script src="../JS/cart.js"></script>
+    <script src="../JS/login.js"></script>
+    <script>
+
+        // ----- SEARCH FUNCTIONALITY -----
+        const searchInput = document.querySelector('.search-container input');
+        const searchButton = document.querySelector('.search-container button');
+
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            // Save search term to localStorage
+            localStorage.setItem('searchTerm', searchTerm);
+
+            // Show notification
+            alert("Please use the search functionality in the categories page");
+
+            // Redirect to categories page
+            window.location.href = 'categories.html';
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookCards = document.querySelectorAll('.category-book-card');
+
+            bookCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Prevent triggering when clicking 'Add to Cart' button
+                    if (e.target.classList.contains('category-add-to-cart')) return;
+
+                    const bookId = card.getAttribute('data-id');
+                    if (bookId) {
+                        window.location.href = `../HTML/books.html?id=${bookId}`;
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart">&times;</button>
+        </div>
+
+        <div class="cart-items">
+            <div class="cart-item">
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal (1 item)</span>
+                <span>$32.99</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Shipping</span>
+                <span>$5.99</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Tax</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-total">
+                <span>Order Total</span>
+                <span>$38.98</span>
+            </div>
+        </div>
+
+        <div class="cart-actions">
+            <button class="continue-checkout" onclick="window.location.href='../HTML/checkout.html'">Continue to Checkout</button>
+        </div>
+    </div>
+</body>
+
+</html>

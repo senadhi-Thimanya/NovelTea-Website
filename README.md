@@ -17,10 +17,9 @@ The website does not use a database since it was done for academic purposes.
 
 # Site logo
 
-<p align="center">
-  <img 
-    src="https://github.com/user-attachments/assets/1f5fbd4f-658a-47de-bf46-497091c82e2d" 
-    alt="logo" 
-    width="150"
-  />
-</p>
+<img 
+  src="https://github.com/user-attachments/assets/1f5fbd4f-658a-47de-bf46-497091c82e2d" 
+  alt="logo" 
+  width="150"
+/>
+

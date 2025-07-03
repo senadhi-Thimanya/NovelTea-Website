@@ -1,4 +1,4 @@
-# NovelTea Bookstore Website
+<h1 align="conter">NovelTea Bookstore Website</h1>
 
 ![Home Page](https://github.com/user-attachments/assets/43965097-44e5-4b30-a08c-f0d7549ecbf9)
 

@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logoutButton.addEventListener('click', function () {
                     localStorage.removeItem('loggedInUser');
                     alert('You have been logged out successfully.');
-                    window.location.href = 'landing.html';
+                    window.location.href = 'index.html';
                 });
             }
         } else if (!isLoggedIn && loginButton) {
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem("loggedInUser", JSON.stringify(storedUser));
 
             alert(`Welcome back!`);
-            window.location.href = "landing.html";
+            window.location.href = "index.html";
         });
     }
 
